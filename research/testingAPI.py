@@ -2,7 +2,7 @@ from huggingface_hub import InferenceClient
 import json
 
 # Your Hugging Face API token
-HF_TOKEN = "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"
+HF_TOKEN = "XXXXXXXXXXXXXXXXXXXXXXX"
 
 # Repository ID for the model you want to use
 repo_id = "meta-llama/Meta-Llama-3-70B-Instruct"
