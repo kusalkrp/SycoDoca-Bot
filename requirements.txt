@@ -1,6 +1,10 @@
-flask==3.0.3
-pinecone==3.2.2
-langchain-pinecone==0.1.0
-requests==2.31.0
-streamlit==1.35.0
-streamlit-chat==0.1.1
+streamlit==1.36.0
+numpy==2.0.0
+pandas==2.2.2
+scikit-learn
+tensorflow
+transformers
+nltk
+flask==2.2.5
+pinecone-client==4.0.0
+streamlit_chat
