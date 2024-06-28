@@ -13,5 +13,5 @@ pinecone-client==3.2.2
 streamlit==1.36.0
 streamlit-chat==0.1.1
 gunicorn==22.0.0
-
+python-dotenv
 
