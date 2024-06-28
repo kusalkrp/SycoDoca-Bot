@@ -6,7 +6,7 @@ from streamlit_chat import message
 st.set_page_config(page_title="Mental Health Chatbot", page_icon=":robot_face:")
 
 # Define the Flask API endpoint
-FLASK_API_URL = "http://localhost:8080/get"
+FLASK_API_URL = "https://sycodocalk-fd75a37fcf4b.herokuapp.com/"
 
 # Predefined questions
 predefined_questions = [
