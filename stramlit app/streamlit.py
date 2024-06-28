@@ -11,14 +11,14 @@ FLASK_API_URL = "https://sycodocalk-fd75a37fcf4b.herokuapp.com/get"
 # Predefined questions
 predefined_questions = [
     "Can you describe any recent changes in your mood or emotions? Have there been times when you felt extremely sad, overly happy, or irritable for extended periods?",
-    "How has your energy level fluctuated over the past few weeks? Do you often feel exhausted or unusually energetic without clear reasons?",
-   "How often do you feel anxious or worried, and what typically triggers these feelings? Do these feelings interfere with your daily activities?",
-    "How would you describe your sleep patterns lately? Have you experienced difficulties falling asleep, staying asleep, or sleeping too much? How does this affect your daytime functioning?",
-    "Have you noticed any changes in your appetite or eating habits? Are you eating more or less than usual, and how do you feel about your body weight and shape?",
-    "How do you generally feel in social situations? Have you been avoiding social interactions, and if so, why? Do you feel overly shy or fear being judged by others?",
-    "Can you describe any impulsive behaviors you've noticed in yourself, such as acting without thinking or engaging in risky activities? How often do these behaviors occur, and what are the typical outcomes?",
-    "Have you experienced moments of feeling disconnected from reality or observing yourself from outside your body? Do you have any gaps in your memory or trouble recalling specific events?",
-    "Are you dealing with any physical symptoms like pain, fatigue, or digestive issues that don't have a clear medical explanation? How do these symptoms impact your daily life?",
+   # "How has your energy level fluctuated over the past few weeks? Do you often feel exhausted or unusually energetic without clear reasons?",
+   #"How often do you feel anxious or worried, and what typically triggers these feelings? Do these feelings interfere with your daily activities?",
+   # "How would you describe your sleep patterns lately? Have you experienced difficulties falling asleep, staying asleep, or sleeping too much? How does this affect your daytime functioning?",
+   # "Have you noticed any changes in your appetite or eating habits? Are you eating more or less than usual, and how do you feel about your body weight and shape?",
+   # "How do you generally feel in social situations? Have you been avoiding social interactions, and if so, why? Do you feel overly shy or fear being judged by others?",
+   # "Can you describe any impulsive behaviors you've noticed in yourself, such as acting without thinking or engaging in risky activities? How often do these behaviors occur, and what are the typical outcomes?",
+   # "Have you experienced moments of feeling disconnected from reality or observing yourself from outside your body? Do you have any gaps in your memory or trouble recalling specific events?",
+   # "Are you dealing with any physical symptoms like pain, fatigue, or digestive issues that don't have a clear medical explanation? How do these symptoms impact your daily life?",
    "Have you gone through any traumatic events that still affect you? How do these experiences manifest in your life, such as through flashbacks, nightmares, or intense emotional distress?",
 ]
 
