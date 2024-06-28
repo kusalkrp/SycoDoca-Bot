@@ -1,12 +1,6 @@
 
 Flask==3.0.3
 flatbuffers==23.5.26
-GitPython==3.1.43
-json5==0.9.25
-jsonpatch==1.33
-jsonpointer==2.4
-jsonschema==4.22.0
-jsonschema-specifications==2023.12.1
 langchain==0.1.15
 langchain-community==0.0.32
 langchain-core==0.1.52
@@ -16,9 +10,6 @@ langchain-text-splitters==0.0.1
 langcodes==3.4.0
 langsmith==0.1.43
 pinecone-client==3.2.2
-python-dateutil==2.9.0.post0
-python-dotenv==1.0.1
-python-json-logger==2.0.7
 streamlit==1.36.0
 streamlit-chat==0.1.1
 gunicorn==22.0.0
