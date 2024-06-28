@@ -3,3 +3,4 @@ flask==2.2.5
 pinecone-client==4.0.0
 streamlit_chat
 gunicorn
+langchain_pinecone
