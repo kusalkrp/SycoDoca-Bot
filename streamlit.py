@@ -19,7 +19,7 @@ predefined_questions = [
    # "Can you describe any impulsive behaviors you've noticed in yourself, such as acting without thinking or engaging in risky activities? How often do these behaviors occur, and what are the typical outcomes?",
    # "Have you experienced moments of feeling disconnected from reality or observing yourself from outside your body? Do you have any gaps in your memory or trouble recalling specific events?",
    # "Are you dealing with any physical symptoms like pain, fatigue, or digestive issues that don't have a clear medical explanation? How do these symptoms impact your daily life?",
-   "Have you gone through any traumatic events that still affect you? How do these experiences manifest in your life, such as through flashbacks, nightmares, or intense emotional distress?",
+   #"Have you gone through any traumatic events that still affect you? How do these experiences manifest in your life, such as through flashbacks, nightmares, or intense emotional distress?",
 ]
 
 # Initialize session state variables
