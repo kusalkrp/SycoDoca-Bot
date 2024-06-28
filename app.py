@@ -19,28 +19,24 @@ embeddings = download_hugging_face_embeddings()
 pc = Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_API_ENV)
 index_name = "mental-chatbot"
 docsearch = PineconeVectorStore.from_existing_index(index_name, embeddings)
-# Predefined questions
-
 
 API_URL = "https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct"
-headers = {"Authorization": "Bearer {HUGGINGFACE_API_KEY}"}
+headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
 
 def truncate_text(text, max_length=1024):
-    """Truncate the text to a maximum number of tokens."""
     tokens = text.split()
     return ' '.join(tokens[:max_length])
 
 def split_into_paragraphs(text, sentence_count=3):
-    """Split text into paragraphs every `sentence_count` sentences."""
     sentences = text.split('. ')
     paragraphs = []
     for i in range(0, len(sentences), sentence_count):
         paragraph = '. '.join(sentences[i:i+sentence_count])
-        if paragraph:  # Ensure paragraph is not empty
+        if paragraph:
             paragraphs.append(paragraph.strip())
     return '\n\n'.join(paragraphs)
 
@@ -71,17 +67,22 @@ Response:"""
             }
         }
         result = query(payload)
-        generated_text = result[0].get("generated_text", "")
+        print(f"Query result: {result}")  # Debugging: Print the query result
         
-        # Strip the prompt text from the generated response
+        generated_text = ""
+        if result:
+            if isinstance(result, list) and len(result) > 0:
+                generated_text = result[0].get("generated_text", "")
+            else:
+                print("Unexpected result format: ", result)
+        else:
+            print("No result returned from query")
+
         response_start = generated_text.find("Response:") + len("Response:")
         response_text = generated_text[response_start:].strip()
-        
-        # Ensure the response is within the desired length and split into paragraphs
         response_text = truncate_text(response_text, max_length=512)
         response_paragraphs = response_text.split('\n')
         
-        # If the response isn't already in paragraphs, format it accordingly
         if len(response_paragraphs) == 1:
             response_paragraphs = self.format_into_paragraphs(response_text)
         
@@ -110,7 +111,6 @@ Response:"""
 retriever = docsearch.as_retriever(search_kwargs={'k': 2})
 custom_qa = CustomRetrievalQA(retriever=retriever, api_url=API_URL, headers=headers)
 
-
 @app.route("/get", methods=["POST"])
 def chat():
     user_answers = request.json.get("answers")
@@ -118,20 +118,8 @@ def chat():
     return jsonify({"response": response})
 
 def generate_response(user_answers):
-    """
-    Generates a response from the bot based on the user's answers.
-
-    Args:
-        user_answers (list): A list of user's answers.
-
-    Returns:
-        str: The generated response from the bot.
-    """
-    # Concatenate user answers
     user_input = " ".join(user_answers)
-    # Truncate the input to ensure it doesn't exceed the maximum length
     user_input = truncate_text(user_input, max_length=512)
-    # Generate bot response using custom CustomRetrievalQA
     result = custom_qa.generate_response(user_input)
     return truncate_text(result, max_length=512)
 
