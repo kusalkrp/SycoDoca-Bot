@@ -15,7 +15,7 @@ load_dotenv()
 # OpenAI-compatible Hugging Face client
 client = OpenAI(
     base_url="https://router.huggingface.co/hyperbolic/v1",
-    api_key=os.environ["HF_TOKEN"],
+    api_key=os.environ["HUGGINGFACE_API_KEY"],
 )
 
 # Streamlit config
